@@ -20,8 +20,9 @@ else
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th></th>
                         <th>País</th>
+                        <th>Estado / Departamento</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,11 +30,14 @@ else
                     {
                         <tr>
                             <td>
-                                <a href="/countries/edit/@country.Id" class="btn btn-warning">Editar</a>
-                                <button class="btn btn-danger" @onclick=@(() => Delete(country))>Borrar</button>
+                                @country.Name
                             </td>
                             <td>
-                                @country.Name
+                                @country.StatesNumber
+                            </td>
+                            <td>
+                                <a href="/countries/edit/@country.Id" class="btn btn-warning">Editar</a>
+                                <button class="btn btn-danger" @onclick=@(() => Delete(country))>Borrar</button>
                             </td>
                         </tr>
                     }
