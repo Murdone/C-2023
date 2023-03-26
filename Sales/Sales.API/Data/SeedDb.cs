@@ -19,13 +19,13 @@ namespace Sales.API.Data
 
         private async Task CheckCountriesAsync()
         {
-            if (!_context.Countries.Any())
+            if (!_context.Countries.Any() && !_context.Categories.Any())
             {
                 _context.Countries.Add(new Country { Name = "Colombia" });
                 _context.Countries.Add(new Country { Name = "Estados Unidos" });
                 _context.Countries.Add(new Country { Name = "Chile" });
+                _context.Categories.Add(new Category { Name = "Transporte" });
             }
-
             await _context.SaveChangesAsync();
         }
     }
